@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>سامانه فر بلیط کنسرت</title>
+
+	<link rel="stylesheet" type="text/css" href="{% static 'ticketSales/css/bootstrap.css' %} " >
+	<link rel="stylesheet" type="text/css" href="{% static 'ticketSales/css/fontawesome.css' %} " >
+	<link rel="stylesheet" type="text/css" href="{% static 'ticketSales/css/style.css' %} " >
+
+	
+</head>
+
+<body> 
+		<div class="container">
+			<div class="row box">
+
+				<h1>لیست کنسرت ها</h1>
+				<u1 class="btnul">
+					<li><a class="btn btn=success">پروفایل  </a></li>
+					<li><a class="btn btn=success">صفحه اصلی</a></li>
+				</u1>
+			</div>
+
+			<div class="row">
+					{% if concertlist %}
+						{% for concert in concertlist %}
+							<div class="col-md-2">
+								<a>
+									<div class="imageBox">
+										<img src=" {{ concert.Poster.url }}">
+										{{ concert }}
+									</div>
+								</a>
+							</div>
+						{% endfor %}
+					{% endif %}
+				
+			</div>
+				
+		</div>
+
+
+</body>
+<script src="{% static 'ticketSales/js/jquery-3.6.3.min.js' %} " ></script>
+<script src="{% static 'ticketSales/js/bootstrap.bundle.js' %} " ></script>
+<script src="{% static 'ticketSales/js/fontawesome.js' %} " ></script>
+<script src="{% static 'ticketSales/js/main.js' %} " ></script>
+</html>
